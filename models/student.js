@@ -52,7 +52,7 @@ const StudentSchema = new mongoose.Schema({
     sectionID: {
         type: Number,
         required: false,
-        default: '001'
+        default: '1'
     }
 })
 module.exports = mongoose.model('Student', StudentSchema)

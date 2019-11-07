@@ -1,0 +1,12 @@
+[
+    {
+      "_id": 33,
+      "given": "Ben",
+      "family": "Brown",
+      "email": "s531795@nwmissouri.edu",
+      "gpa": 4.0,
+      "github": "https://www.github.com/BenB049",
+      "website": "www.youtube.com",
+      "sectionID": 3
+    }
+  ]
