@@ -26,8 +26,8 @@ const PetsSchema = new mongoose.Schema({
         required: true,
     },
     birthDate: {
-        type: Date,
-        required: true, //pet birthdays are essential. No exceptions.
+        type: Date, //if actual birthdate is unknown, date of acquisition is acceptible.
+        required: true, //pet birthdays are mandatory, as are their birthday celebreations. No exceptions. 
     },
     breed: {
         type: String,
