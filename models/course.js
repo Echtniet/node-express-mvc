@@ -14,32 +14,32 @@ const CourseSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    CourseName: {
+    courseName: {
         type: String,
         minlength: 3,
         maxlength: 40, 
         required: true,
         default: 'Name Error'
     },
-    Professor: {
+    professor: {
         type: Teacher,
         required: true,
     },
-    Location: {
+    location: {
         type: String,
         minLength: 3,
         maxLength: 20,
         required: true, 
     },
-    Section: {
+    section: {
         type: Number,
         required: true,
     },
-    Time: {
+    time: {
         type: Time,
         required: true,
     },
-    Capacity: {
+    capacity: {
         type: Number,
         required: true,
     }

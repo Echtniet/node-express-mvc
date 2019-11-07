@@ -2,7 +2,12 @@
     {
         "_id": 42,
         "CourseName": "Web Apps",
-        "Professor": "Dr. Case",
+        "Professor": {
+            "_id": 99,
+            "email": "dcase@nwmissouri.edu",
+            "given": "Denise",
+            "family": "Case"
+        },
         "Location": "Colden Hall",
         "Section": 2,
         "Time": 1100,
