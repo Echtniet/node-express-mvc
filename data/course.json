@@ -1,0 +1,11 @@
+[
+    {
+        "_id": 42,
+        "CourseName": "Web Apps",
+        "Professor": "Dr. Case",
+        "Location": "Colden Hall",
+        "Section": 2,
+        "Time": 1100,
+        "Capacity": 30
+    }
+]
