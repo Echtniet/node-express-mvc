@@ -28,4 +28,12 @@
         "owner": "37812317813713",
         "birthDate": "2014-01-01T00:00:00"
     }
+    {
+	"_id": "6",
+	"name": "Duke",
+	"owner": "Cole",
+	"birthDate": "2004-01-18T00:00:00",
+	"breed": "Labrador Retriever"
+	"friendly": "true"
+    }
 ]
