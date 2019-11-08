@@ -7,6 +7,56 @@
       "gpa": 4.0,
       "github": "https://www.github.com/BenB049",
       "website": "www.youtube.com",
-      "sectionID": 3
+      "sectionID": 2
+    },
+    {
+      "_id": 15,
+      "given": "Clinton",
+      "family": "Davelaar",
+      "email": "sID@nwmissouri.edu",
+      "gpa": 4.0,
+      "github": "https://www.github.com",
+      "website": "www.youtube.com",
+      "sectionID": 2
+    },
+    {
+      "_id": 69,
+      "given": "Cole",
+      "family": "Houston",
+      "email": "sID@nwmissouri.edu",
+      "gpa": 4.0,
+      "github": "https://www.github.com",
+      "website": "www.youtube.com",
+      "sectionID": 2
+    },
+    {
+      "_id": 42,
+      "given": "Jacob",
+      "family": "Taylor",
+      "email": "sID@nwmissouri.edu",
+      "gpa": 4.0,
+      "github": "https://www.github.com",
+      "website": "www.youtube.com",
+      "sectionID": 2
+    },
+    {
+      "_id": 30,
+      "given": "Michael",
+      "family": "Burnes",
+      "email": "sID@nwmissouri.edu",
+      "gpa": 4.0,
+      "github": "https://www.github.com",
+      "website": "www.youtube.com",
+      "sectionID": 2
+    },
+    {
+      "_id": 4,
+      "given": "Joe",
+      "family": "M.",
+      "email": "someone@email.com",
+      "gpa": 4.0,
+      "github": "https://www.github.com",
+      "website": "www.youtube.com",
+      "sectionID": 2
     }
   ]
