@@ -3,7 +3,7 @@ const developerData = require('../data/developers.json') // read in data file
 const petData = require('../data/pets.json')
 const studentData = require('../data/students.json')
 const courseData = require('../data/course.json')
-const teacherData = require('../data/teacher.json')
+const teacherData = require('../data/teachers.json')
 // inject Express app to configure it - EVERYTHING in through argument list
 
 module.exports = (app) => {

@@ -1,0 +1,32 @@
+[
+  {
+    "_id": 1,
+    "teacherName": "Nathan Eloe",
+    "office": 2040,
+ },
+ {
+    "_id": 2,
+    "teacherName": "Michael Rogers",
+    "office": 2050,
+ },
+ {
+    "_id": 3,
+    "teacherName": "Charles Hoot",
+    "office": 2060,
+ },
+ {
+    "_id": 4,
+    "teacherName": "Denise Case",
+    "office": 2070,
+ },
+ {
+    "_id": 5,
+    "teacherName": "Scott Bell",
+    "office": 2080,
+ },
+ {
+    "_id": 6,
+    "teacherName": "Teacher teach",
+    "office": 2090,
+ }
+]
