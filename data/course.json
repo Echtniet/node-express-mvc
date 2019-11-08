@@ -2,9 +2,7 @@
     {
         "_id": 42,
         "CourseName": "Web Apps",
-        "Professor": {
-            "_id": 4
-        },
+        "Professor_id": 4,
         "Location": "Colden Hall",
         "Section": 2,
         "Time": 11,
@@ -13,9 +11,7 @@
     {
         "_id": 43,
         "CourseName": "Big Data",
-        "Professor": {
-            "_id": 4
-        },
+        "Professor_id": 4,
         "Location": "Colden Hall",
         "Section": 1,
         "Time": 1230,
@@ -24,9 +20,7 @@
     {
         "_id": 44,
         "CourseName": "Applied Cryptography",
-        "Professor": {
-            "_id": 5
-        },
+        "Professor_id": 5,
         "Location": "Colden Hall",
         "Section": 1,
         "Time": 2,
@@ -35,9 +29,7 @@
     {
         "_id": 45,
         "CourseName": "Web Mining",
-        "Professor": {
-            "_id": 1
-        },
+        "Professor_id": 1,
         "Location": "Colden Hall",
         "Section": 1,
         "Time": 11,
@@ -46,9 +38,7 @@
     {
         "_id": 46,
         "CourseName": "Internet of Things",
-        "Professor": {
-            "_id": 2
-        },
+        "Professor_id": 2,
         "Location": "Colden Hall",
         "Section": 1,
         "Time": 10,
@@ -57,9 +47,7 @@
     {
         "_id": 47,
         "CourseName": "Discrete Math",
-        "Professor": {
-            "_id": 3
-        },
+        "Professor_id": 3,
         "Location": "Valk",
         "Section": 3,
         "Time": 9,
