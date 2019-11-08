@@ -3,14 +3,78 @@
         "_id": 42,
         "CourseName": "Web Apps",
         "Professor": {
-            "_id": 99,
-            "email": "dcase@nwmissouri.edu",
-            "given": "Denise",
-            "family": "Case"
+            "_id": 4,
+            "teacherName": "Denise Case",
+            "office": 2070,
         },
         "Location": "Colden Hall",
         "Section": 2,
-        "Time": 1100,
+        "Time": 11,
+        "Capacity": 30
+    },
+    {
+        "_id": 43,
+        "CourseName": "Big Data",
+        "Professor": {
+            "_id": 4,
+            "teacherName": "Denise Case",
+            "office": 2070
+        },
+        "Location": "Colden Hall",
+        "Section": 1,
+        "Time": 1230,
+        "Capacity": 30
+    },
+    {
+        "_id": 44,
+        "CourseName": "Applied Cryptography",
+        "Professor": {
+            "_id": 5,
+            "teacherName": "Scott Bell",
+            "office": 2080 
+        },
+        "Location": "Colden Hall",
+        "Section": 1,
+        "Time": 2,
+        "Capacity": 20
+    },
+    {
+        "_id": 45,
+        "CourseName": "Web Mining",
+        "Professor": {
+            "_id": 1,
+            "teacherName": "Nathan Eloe",
+            "office": 2040
+        },
+        "Location": "Colden Hall",
+        "Section": 1,
+        "Time": 11,
+        "Capacity": 40
+    },
+    {
+        "_id": 46,
+        "CourseName": "Internet of Things",
+        "Professor": {
+            "_id": 2,
+            "teacherName": "Michael Rogers",
+            "office": 2050
+        },
+        "Location": "Colden Hall",
+        "Section": 1,
+        "Time": 10,
+        "Capacity": 30
+    },
+    {
+        "_id": 47,
+        "CourseName": "Discrete Math",
+        "Professor": {
+            "_id": 3,
+            "teacherName": "Charles Hoot",
+            "office": 2060
+        },
+        "Location": "Valk",
+        "Section": 3,
+        "Time": 9,
         "Capacity": 30
     }
 ]
