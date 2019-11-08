@@ -2,7 +2,7 @@
     {
         "_id": "1",
         "name": "Smudge",
-        "owner": "1337",
+        "ownerId": "1337",
         "birthDate": "2019-10-19T00:00:00",
         "breed": "Beagle",
         "friendly": "true"
@@ -10,7 +10,7 @@
     {
         "_id": "2",
         "name": "Melvin",
-        "owner": "13124182319",
+        "ownerId": "13124182319",
         "birthDate": "2017-01-01T00:00:00",
         "breed": "Yorkie",
         "friendly": "true"
@@ -18,23 +18,22 @@
     {
         "_id": "4",
         "name": "Moon",
-        "owner": "132713172312",
+        "ownerId": "132713172312",
         "birthDate": "2016-01-01T00:00:00",
         "breed": "Black"
     },
     {
         "_id":"5",
-        "name": ""
-
-
-
-    }
+        "name": "Smudge",
+        "ownerId": "37812317813713",
+        "birthDate": "2014-01-01T00:00:00"
+    },
     {
 	"_id": "6",
-	"name": "Duke",
-	"owner": "Cole",
-	"birthDate": "2004-01-18T00:00:00",
-	"breed": "Labrador Retriever"
-	"friendly": "true"
+	    "name": "Duke",
+    	"ownerId": "13282314812731",
+	    "birthDate": "2004-01-18T00:00:00",
+    	"breed": "Labrador Retriever",
+	    "friendly": "true"
     }
 ]
