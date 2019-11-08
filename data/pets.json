@@ -1,15 +1,22 @@
 [
     {
-        "_id": 1,
+        "_id": "1",
         "name": "Smudge",
-        "owner": {
-            "_id": "1337",
-            "name": "Michael Burnes",
-            "birthDate": "1997-05-30T00:00:00",
-            "remember_to_implement": "more"
-        },
+        "owner": "1337",
         "birthDate": "2019-10-19T00:00:00",
         "breed": "Beagle",
         "friendly": "true"
+    },
+    {
+        "_id":"2",
+        "name":"Melvin",
+        "owner":"13124182319",
+        "birthDate": "2017-01-01T00:00:00",
+        "breed": "Yorkie",
+        "friendly": "true"
+    },
+    {
+        "_id":"3",
+
     }
 ]

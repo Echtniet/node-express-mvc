@@ -22,7 +22,7 @@ const PetsSchema = new mongoose.Schema({
         default: 'Name Error'
     },
     owner: {
-        type: Student,
+        type: number, //studentID here
         required: true,
     },
     birthDate: {
