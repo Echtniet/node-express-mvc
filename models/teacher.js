@@ -23,7 +23,7 @@ const TeacherSchema = new mongoose.Schema({
     },    
     office: {
         type: Number,
-        required: true,
+        required: true
     }
 })
 
