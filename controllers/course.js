@@ -14,14 +14,14 @@ const notfoundstring = 'Could not find course with id='
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
-api.get('/findall', (req, res) => {
+api.get('/course/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.course.query
   res.send(JSON.stringify(data))
 })
 
 // GET one JSON by ID
-api.get('/findone/:id', (req, res) => {
+api.get('/course/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.course.query
