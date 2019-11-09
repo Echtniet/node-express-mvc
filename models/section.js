@@ -16,7 +16,7 @@ const SectionSchema = new mongoose.Schema({
 	required: true
     },
     courseId: {
-	type: Number
+	type: Number,
 	required: true
     },
     professorId{
