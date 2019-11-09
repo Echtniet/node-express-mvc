@@ -2,7 +2,7 @@
 *  Course model
 *  Describes the characteristics of each attribute in the Course resource.
 *
-* @author Jacob Taylor <s526858@nwmissouri.edu>
+* @author Clinton Davelaar <s533350@nwmissouri.edu>
 * @requires mongoose
 *
 */
@@ -23,7 +23,7 @@ const TeacherSchema = new mongoose.Schema({
     },    
     office: {
         type: Number,
-        required: true,
+        required: true
     }
 })
 
