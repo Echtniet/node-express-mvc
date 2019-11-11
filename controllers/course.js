@@ -14,7 +14,7 @@ const notfoundstring = 'Could not find course with id='
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
-api.get('course/findall', (req, res) => {
+api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.course.query
   res.send(JSON.stringify(data))
