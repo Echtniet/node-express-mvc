@@ -27,6 +27,7 @@ router.get('/index', (req, res, next) => {
 router.use('/dev', require('../controllers/developer.js'))
 router.use('/teachers', require('../controllers/teachers.js'))
 router.use('/course', require('../controllers/course.js'))
+router.use('/section', require('../controllers/section.js'))
 router.use('/pets', require("../controllers/pets.js"))
 router.use('/student', require("../controllers/student.js"))
 console.log('END routing')
