@@ -36,7 +36,7 @@ const CourseSchema = new mongoose.Schema({
         required: true,
     },
     time: {
-        type: Time,
+        type: Number,
         required: true,
     },
     capacity: {
