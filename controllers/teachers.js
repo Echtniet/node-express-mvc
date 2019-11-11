@@ -14,7 +14,7 @@ const notfoundstring = 'Could not find developer with id='
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
-api.get('/teachers/findall', (req, res) => {
+api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.teachers.query
   res.send(JSON.stringify(data))
