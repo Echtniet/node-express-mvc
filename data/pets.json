@@ -1,6 +1,6 @@
 [
     {
-        "_id": "1",
+        "_id": 1,
         "name": "Smudge",
         "ownerId": "1337",
         "birthDate": "2019-10-19T00:00:00",
@@ -8,7 +8,7 @@
         "friendly": "true"
     },
     {
-        "_id": "2",
+        "_id": 2,
         "name": "Melvin",
         "ownerId": "13124182319",
         "birthDate": "2017-01-01T00:00:00",
@@ -16,20 +16,20 @@
         "friendly": "true"
     },
     {
-        "_id": "4",
+        "_id": 4,
         "name": "Moon",
         "ownerId": "132713172312",
         "birthDate": "2016-01-01T00:00:00",
         "breed": "Black"
     },
     {
-        "_id":"5",
+        "_id":5,
         "name": "Smudge",
         "ownerId": "37812317813713",
         "birthDate": "2014-01-01T00:00:00"
     },
     {
-	"_id": "6",
+	"_id": 6,
 	    "name": "Duke",
     	"ownerId": "13282314812731",
 	    "birthDate": "2004-01-18T00:00:00",
