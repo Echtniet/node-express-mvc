@@ -21,7 +21,7 @@ api.get('course/findall', (req, res) => {
 })
 
 // GET one JSON by ID
-api.get('course/:id', (req, res) => {
+api.get('findone/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.course.query

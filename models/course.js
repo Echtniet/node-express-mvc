@@ -22,7 +22,7 @@ const CourseSchema = new mongoose.Schema({
         default: 'Name Error'
     },
     professor: {
-        type: Teacher,
+        type: Number,
         required: true,
     },
     location: {
@@ -36,7 +36,7 @@ const CourseSchema = new mongoose.Schema({
         required: true,
     },
     time: {
-        type: Time,
+        type: Number,
         required: true,
     },
     capacity: {
