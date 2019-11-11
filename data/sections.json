@@ -3,36 +3,36 @@
         "_id": 1,
         "courseId": 1,
         "professorId": 4,
-        "studentId": 1,
+        "studentId": 1
     },
     {
         "_id": 1,
         "courseId": 1,
         "professorId": 4,
-        "studentId": 2,
+        "studentId": 2
     },
     {
         "_id": 1,
         "courseId": 1,
         "professorId": 4,
-        "studentId": 3,
+        "studentId": 3
     },
     {
         "_id": 1,
         "courseId": 1,
         "professorId": 4,
-        "studentId": 4,
+        "studentId": 4
     },
     {
         "_id": 1,
         "courseId": 1,
         "professorId": 4,
-        "studentId": 5,
+        "studentId": 5
     },
     {
         "_id": 1,
         "courseId": 1,
         "professorId": 4,
-        "studentId": 6,
+        "studentId": 6
     }
 ]
