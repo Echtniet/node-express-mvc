@@ -30,6 +30,47 @@ api.get('/findone/:id', (req, res) => {
   res.send(JSON.stringify(item))
 })
 
+// GET index
+api.get('/index', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  return res.end("Index request")
+  res.send(JSON.stringify(item))
+})
+
+// GET details
+api.get('/details', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  return res.end("Detail request")
+  res.send(JSON.stringify(item))
+})
+
+// GET delete
+api.get('/delete', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  return res.end("Delete request")
+  res.send(JSON.stringify(item))
+})
+
+// GET edit
+  api.get('/edit', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  return res.end("Edit request")
+  res.send(JSON.stringify(item))
+})
+
+// GET create
+api.get('/create', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  return res.end("Create request")
+  res.send(JSON.stringify(item))
+})
+
+// CRUD METHODS
+function handleCreate(){}
+function handleUpdate(){}
+function handleDelete(){}
+
+
 // RESPOND WITH VIEWS  --------------------------------------------
 
 // later
