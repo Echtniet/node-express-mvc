@@ -65,6 +65,12 @@ api.get('/create', (req, res) => {
   res.send(JSON.stringify(item))
 })
 
+api.post('/postcreate', (req, res) =>{
+  res.setHeader('Content-Type', 'application/json')
+  return res.end("Post create request")
+  res.send(JSON.stringify(item))
+})
+
 // CRUD METHODS
 function handleCreate(){}
 function handleUpdate(){}
