@@ -8,6 +8,7 @@
 const express = require('express')
 const api = express.Router()
 const Model = require('../models/course.js')
+const LOG = require('../utils/logger.js')
 const find = require('lodash.find')
 const notfoundstring = 'Could not find course with id='
 
@@ -50,7 +51,7 @@ api.get('/details', (req, res) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
     res.locals.teacher = results[0]
-    return res.render('teachers/details.ejs')
+    return res.render('course/details.ejs')
   })
 })
 
@@ -62,7 +63,7 @@ api.get('/delete', (req, res) => {
   Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
     if (err) { return res.end(notfoundstring) }
     console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
-    return res.redirect('/teachers/index')
+    return res.redirect('/course/index')
   })
 })
 
@@ -74,7 +75,7 @@ api.get('/edit', (req, res) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
     res.locals.teacher = results[0]
-    return res.render('teachers/edit.ejs')
+    return res.render('course/edit.ejs')
   })
 })
 
@@ -85,7 +86,7 @@ api.get('/create', (req, res) => {
     if (err) { return res.end('error on create') }
     res.locals.teachers = data
     res.locals.teacher = new Model()
-    res.render('teachers/create')
+    res.render('course/create')
   })
 })
 
@@ -96,9 +97,60 @@ api.post('/postcreate', (req, res) =>{
 })
 
 // CRUD METHODS
-function handleCreate(){}
-function handleUpdate(){}
-function handleDelete(){}
+api.post('/save', (req, res) => {
+  LOG.info(`Handling POST ${req}`)
+  LOG.debug(JSON.stringify(req.body))
+  const item = new Model()
+  LOG.info(`NEW ID ${req.body._id}`)
+  item._id = parseInt(req.body._id)
+  item.courseName = req.body.courseName
+  item.professor = req.body.professor
+  item.location = req.body.location
+  item.section = req.body.section
+  item.time = req.body.time
+  item.capacity = req.body.capacity
+  item.save((err) => {
+    if (err) { return res.end('ERROR: item could not be saved') }
+    LOG.info(`SAVING NEW item ${JSON.stringify(item)}`)
+    return res.redirect('/course/index')
+  })
+})
+// POST save with id
+api.post('/save/:id', (req, res) => {
+  LOG.info(`Handling SAVE request ${req}`)
+  const id = parseInt(req.params.id)
+  LOG.info(`Handling SAVING ID=${id}`)
+  Model.updateOne({ _id: id },
+    { // use mongoose field update operator $set
+      $set: {
+        courseName: req.body.courseName,
+        professor: req.body.professor,
+        location: req.body.location,
+        section: req.body.section,
+        time: req.body.time,
+        capacity: req.body.capacity
+      }
+    },
+    (err, item) => {
+      if (err) { return res.end(notfoundstring) }
+      LOG.info(`ORIGINAL VALUES ${JSON.stringify(item)}`)
+      LOG.info(`UPDATED VALUES: ${JSON.stringify(req.body)}`)
+      LOG.info(`SAVING UPDATED item ${JSON.stringify(item)}`)
+      return res.redirect('/course/index')
+    })
+})
+
+// DELETE id (uses HTML5 form method POST)
+api.post('/delete/:id', (req, res) => {
+  LOG.info(`Handling DELETE request ${req}`)
+  const id = parseInt(req.params.id)
+  LOG.info(`Handling REMOVING ID=${id}`)
+  Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
+    if (err) { return res.end(notfoundstring) }
+    console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
+    return res.redirect('/course/index')
+  })
+})
 
 // RESPOND WITH VIEWS  --------------------------------------------
 
