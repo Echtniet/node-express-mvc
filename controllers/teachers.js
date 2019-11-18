@@ -46,10 +46,15 @@ api.get('/index', (req, res) => {
 })
 
 // GET details
-api.get('/details', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Detail request")
-  res.send(JSON.stringify(item))
+api.get('/details/:id', (req, res) => {
+  LOG.info(`Handling GET /details/:id ${req}`)
+  const id = parseInt(req.params.id)
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
+    res.locals.teacher = results[0]
+    return res.render('teachers/details.ejs')
+  })
 })
 
 // GET delete
