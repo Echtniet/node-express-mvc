@@ -44,29 +44,54 @@ api.get('/index', (req, res) => {
 
 // GET details
 api.get('/details', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Detail request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling GET /details/:id ${req}`)
+  const id = parseInt(req.params.id)
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
+    res.locals.teacher = results[0]
+    return res.render('teachers/details.ejs')
+  })
 })
 
 // GET delete
 api.get('/delete', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Delete request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling DELETE request ${req}`)
+  const id = parseInt(req.params.id)
+  LOG.info(`Handling REMOVING ID=${id}`)
+  Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
+    if (err) { return res.end(notfoundstring) }
+    console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
+    return res.redirect('/teachers/index')
+  })
 })
 
 // GET edit
-  api.get('/edit', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Edit request")
-  res.send(JSON.stringify(item))
+api.get('/edit', (req, res) => {
+  LOG.info(`Handling GET /edit/:id ${req}`)
+  const id = parseInt(req.params.id)
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
+    res.locals.teacher = results[0]
+    return res.render('teachers/edit.ejs')
+  })
 })
 
 // GET create
 api.get('/create', (req, res) => {
+  LOG.info(`Handling GET /create ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('error on create') }
+    res.locals.teachers = data
+    res.locals.teacher = new Model()
+    res.render('teachers/create')
+  })
+})
+
+api.post('/postcreate', (req, res) =>{
   res.setHeader('Content-Type', 'application/json')
-  return res.end("Create request")
+  return res.end("Post create request")
   res.send(JSON.stringify(item))
 })
 
