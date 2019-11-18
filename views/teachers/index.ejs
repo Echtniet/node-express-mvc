@@ -21,8 +21,11 @@
         <div class="panel-body">
 
           <br> ID: <%=  teacher._id %>
-          <br> Email: <%=teacher.teacherName%>
-          <br> Given: <%=teacher.office%>
+          <br> Email: <%=teacher.email%>
+          <br> Given: <%=teacher.given%>
+          <br> Family: <%=teacher.family%>
+          <br> Salray: <%=teacher.salary%>
+          <br> GitHub: <%=teacher.github%>
 
           <hr>
           <a href="/teachers/delete/<%= teacher._id  %>" class="btn btn-danger"> Delete </a>
