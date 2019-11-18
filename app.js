@@ -92,8 +92,8 @@ connection.once('open', function () {
 
   toSeed = ['developers', 'students', 'teachers', 'course', 'pets', 'sections']
 
-  for(seeed in toSeed){
-    seed(seeed)
+  for(var i = 0; i < toSeed.length; i++){
+    seed(toSeed[i])
   }
 /*
   seed('developers')
