@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class=row>
     <div class="col col-md-12">
-      <a href="teachers/create" class="btn btn-primary new">
+      <a href="create" class="btn btn-primary new">
         Create a new Teacher
       </a>
 
@@ -25,9 +25,9 @@
           <br> Given: <%=teacher.office%>
 
           <hr>
-          <a href="/teacher/delete/<%= teacher._id  %>" class="btn btn-danger"> Delete </a>
-          <a href="/teacher/details/<%= teacher._id %>" class="btn btn-info"> Details </a>
-          <a href="/teacher/edit/<%= teacher._id %>" class="btn btn-primary"> Edit </a>
+          <a href="/teachers/delete/<%= teacher._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/teachers/details/<%= teacher._id %>" class="btn btn-info"> Details </a>
+          <a href="/teachers/edit/<%= teacher._id %>" class="btn btn-primary"> Edit </a>
           <hr>
           <hr>
         </div>
