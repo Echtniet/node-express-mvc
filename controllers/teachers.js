@@ -5,9 +5,12 @@
 * @author Denise Case <dcase@nwmissouri.edu>
 *
 */
+
+
 const express = require('express')
 const api = express.Router()
-// const Model = require('../models/developer.js')
+const Model = require('../models/teacher.js')
+const LOG = require('../utils/logger.js')
 const find = require('lodash.find')
 const notfoundstring = 'Could not find developer with id='
 
@@ -32,9 +35,12 @@ api.get('/findone/:id', (req, res) => {
 
 // GET index
 api.get('/index', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Index request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling GET / ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('Error') }
+    res.locals.developers = data
+    res.render('teachers/index.ejs')
+  })
 })
 
 // GET details

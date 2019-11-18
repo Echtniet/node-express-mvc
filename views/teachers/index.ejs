@@ -21,21 +21,13 @@
         <div class="panel-body">
 
           <br> ID: <%=  teacher._id %>
-          <br> Email: <%=developer.email%>
-          <br> Given: <%=developer.given%>
-          <br> Family: <%=developer.family%>
-          <br> Street 1: <%=developer.street1%>
-          <br> Street 2: <%=developer.street2 %>
-          <br> City: <%=developer.city %>
-          <br> State: <%=developer.state %>
-          <br> Zip: <%=developer.zip %>
-          <br> Country: <%=developer.country %>
-          <br> URL: <%=developer.url %>
+          <br> Email: <%=teacher.teacherName%>
+          <br> Given: <%=teacher.office%>
 
           <hr>
-          <a href="/developer/delete/<%= developer._id  %>" class="btn btn-danger"> Delete </a>
-          <a href="/developer/details/<%= developer._id %>" class="btn btn-info"> Details </a>
-          <a href="/developer/edit/<%= developer._id %>" class="btn btn-primary"> Edit </a>
+          <a href="/teacher/delete/<%= teacher._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/teacher/details/<%= teacher._id %>" class="btn btn-info"> Details </a>
+          <a href="/teacher/edit/<%= teacher._id %>" class="btn btn-primary"> Edit </a>
           <hr>
           <hr>
         </div>
