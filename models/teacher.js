@@ -14,16 +14,37 @@ const TeacherSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    teacherName: {
+    given: {
         type: String,
         minlength: 3,
         maxlength: 40, 
         required: true,
         default: 'Name Error'
-    },    
-    office: {
+    },
+    family: {
+        type: String,
+        minlength: 3,
+        maxlength: 40, 
+        required: true,
+        default: 'Name Error'
+    },
+    email: {
+        type: String,
+        minlength: 3,
+        maxlength: 40, 
+        required: true,
+        default: 'Name Error'
+    }, 
+    salary:{
         type: Number,
         required: true
+    },
+    github: {
+        type: String,
+        minlength: 3,
+        maxlength: 40, 
+        required: true,
+        default: 'github error'
     }
 })
 

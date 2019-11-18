@@ -1,32 +1,50 @@
 [
   {
     "_id": 1,
-    "teacherName": "Nathan Eloe",
-    "office": 2040
+    "given": "Nathan",
+    "family": "Eloe",
+    "email": "eloe@nwmissouri.edu",
+    "salary": 100000,
+    "github": "github.com/eloe"
  },
- {
+  {
     "_id": 2,
-    "teacherName": "Michael Rogers",
-    "office": 2050
+    "given": "Michael",
+    "family": "Rogers",
+    "email": "rogers@nwmissouri.edu",
+    "salary": 100000,
+    "github": "github.com/rogers"
  },
- {
+  {
     "_id": 3,
-    "teacherName": "Charles Hoot",
-    "office": 2060
+    "given": "Charles",
+    "family": "Hoot",
+    "email": "hoot@nwmissouri.edu",
+    "salary": 100000,
+    "github": "github.com/hoot"
  },
- {
+  {
     "_id": 4,
-    "teacherName": "Denise Case",
-    "office": 2070
+    "given": "Denise",
+    "family": "Case",
+    "email": "case@nwmissouri.edu",
+    "salary": 100000,
+    "github": "github.com/case"
  },
- {
+  {
     "_id": 5,
-    "teacherName": "Scott Bell",
-    "office": 2080
+    "given": "Scott",
+    "family": "Bell",
+    "email": "bell@nwmissouri.edu",
+    "salary": 100000,
+    "github": "github.com/bell"
  },
- {
+  {
     "_id": 6,
-    "teacherName": "Teacher teach",
-    "office": 2090
- }
+    "given": "Name",
+    "family": "Name",
+    "email": "name@nwmissouri.edu",
+    "salary": 100000,
+    "github": "github.com/name"
+ },
 ]

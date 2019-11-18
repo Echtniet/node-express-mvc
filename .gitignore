@@ -13,3 +13,4 @@ node_modules/
 !.vscode/extensions.json
 logs/
 logs/debug.log
+logs/debug.log

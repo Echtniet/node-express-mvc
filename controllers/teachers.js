@@ -68,9 +68,13 @@ api.get('/delete', (req, res) => {
 
 // GET create
 api.get('/create', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Create request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling GET /create ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('error on create') }
+    res.locals.teachers = data
+    res.locals.teacher = new Model()
+    res.render('teachers/create')
+  })
 })
 
 api.post('/postcreate', (req, res) =>{
