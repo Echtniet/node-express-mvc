@@ -58,10 +58,15 @@ api.get('/details/:id', (req, res) => {
 })
 
 // GET delete
-api.get('/delete', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Delete request")
-  res.send(JSON.stringify(item))
+api.get('/delete/:id', (req, res) => {
+  LOG.info(`Handling DELETE request ${req}`)
+  const id = parseInt(req.params.id)
+  LOG.info(`Handling REMOVING ID=${id}`)
+  Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
+    if (err) { return res.end(notfoundstring) }
+    console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
+    return res.redirect('/teachers/index')
+  })
 })
 
 // GET edit
