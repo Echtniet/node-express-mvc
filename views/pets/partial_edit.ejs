@@ -1,0 +1,49 @@
+<!-- main - a row holds columns -->
+<div class=row>
+  <div class="col col-xs-12">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="name" class="form-control" id="name" name="name" value="<%= pet.name %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="ownerId">Owner's ID</label>
+      <input type="text" class="form-control" id="ownerId" name="ownerId" value="<%= pet.ownerId %>">
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">Birth Date</label>
+      <input type="text" class="form-control" id="birthDate" name="birthDate" value="<%= pet.birthDate %>">
+    </div>
+
+    <div class="form-group">
+      <label for="breed">Breed</label>
+      <input type="text" class="form-control" id="breed" name="breed" value="<%= pet.breed %>">
+    </div>
+
+    <div class="form-group">
+      <label for="friendly">Friendly?</label>
+      <input type="text" class="form-control" id="frienldy" name="friendly" value="<%= pet.friendly %>">
+    </div>
+
+
+  </div>
+</div>
+
+  <script>
+  // window.onload = a function that will call all update functions to display calculated values
+  window.onload = function () {
+    onFormChange();
+  }
+
+  // prevent submission when hitting enter key - optional, but user-friendly 
+  document.forms[0].onkeypress = function (e) {
+    var key = e.charCode || e.keyCode || 0;
+    if (key == 13) {
+      e.preventDefault();
+    }
+  }
+
+// END CLIENT SIDE CODE  (close the script tag)
+</script>
