@@ -6,13 +6,13 @@
 
         <h2>Confirm deletion of course</h2>
         <br>
-        <br> ID: <%=  course._id %>
-        <br> courseName: <%=course.courseName%>
-        <br> Professor: <%=course.professor%>
-        <br> Location: <%=course.location%>
-        <br> Section: <%=course.section%>
-        <br> Time: <%=course.time %>
-        <br> Capacity: <%=course.capacity %>
+        <br> ID: <%=  courses._id %>
+        <br> courseName: <%=courses.courseName%>
+        <br> Professor: <%=courses.professor%>
+        <br> Location: <%=courses.location%>
+        <br> Section: <%=courses.section%>
+        <br> Time: <%=courses.time %>
+        <br> Capacity: <%=courses.capacity %>
         <hr>
       
             <form method="get" action="/course">
@@ -20,7 +20,7 @@
             </form>
 
 
-            <form method="POST" action="/course/delete/<%= course._id %>">
+            <form method="POST" action="/course/delete/<%= courses._id %>">
                 <input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
             </form>
 

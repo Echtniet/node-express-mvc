@@ -8,13 +8,13 @@
       <br>
       <% 
       maxID=0; 
-      for (var i=0; i < courses.length; i++) {
-        if(courses[i]._id > maxID) { 
-          maxID=courses[i]._id;  
+      for (var i=0; i < course.length; i++) {
+        if(course[i]._id > maxID) { 
+          maxID=course[i]._id;  
         }
       }
-      const course = {}
-      course._id = maxID+1
+      const courses = {}
+      courses._id = maxID+1
      
       %>
       <div class="content">
