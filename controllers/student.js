@@ -7,7 +7,8 @@
 */
 const express = require('express')
 const api = express.Router()
-// const Model = require('../models/developer.js')
+const Model = require('../models/student.js')
+const LOG = require('../utils/logger.js')
 const find = require('lodash.find')
 const notfoundstring = 'Could not find student with id='
 
@@ -15,53 +16,83 @@ const notfoundstring = 'Could not find student with id='
 
 // GET all JSON
 api.get('/findall', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  const data = req.app.locals.students.query
-  res.send(JSON.stringify(data))
+  LOG.info(`Handling /findall ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('Error finding all') }
+    res.json(data)
+  })
 })
 
 // GET one JSON by ID
 api.get('/findone/:id', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
+  LOG.info(`Handling /findone ${req}`)
   const id = parseInt(req.params.id)
-  const data = req.app.locals.students.query
-  const item = find(data, { _id: id })
-  if (!item) { return res.end(notfoundstring + id) }
-  res.send(JSON.stringify(item))
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(`notfoundstring ${id}`) }
+    res.json(results[0])
+  })
 })
 
 // GET index
 api.get('/index', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Index request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling GET / ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('Error') }
+    res.locals.students = data
+    res.render('students/index.ejs')
+  })
 })
 
 // GET details
 api.get('/details', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Detail request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling GET /details/:id ${req}`)
+  const id = parseInt(req.params.id)
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
+    res.locals.student = results[0]
+    return res.render('students/details.ejs')
+  })
 })
 
 // GET delete
 api.get('/delete', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Delete request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling DELETE request ${req}`)
+  const id = parseInt(req.params.id)
+  LOG.info(`Handling REMOVING ID=${id}`)
+  Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
+    if (err) { return res.end(notfoundstring) }
+    console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
+    return res.redirect('/students/index')
+  })
 })
 
 // GET edit
-  api.get('/edit', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Edit request")
-  res.send(JSON.stringify(item))
+api.get('/edit/:id', (req, res) => {
+  LOG.info(`Handling GET /edit/:id ${req}`)
+  const id = parseInt(req.params.id)
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
+    res.locals.student = results[0]
+    return res.render('students/edit.ejs')
+  })
 })
 
 // GET create
 api.get('/create', (req, res) => {
+  LOG.info(`Handling GET /create ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('error on create') }
+    res.locals.students = data
+    res.locals.student = new Model()
+    res.render('students/create')
+  })
+})
+
+api.post('/postcreate', (req, res) =>{
   res.setHeader('Content-Type', 'application/json')
-  return res.end("Create request")
+  return res.end("Post create request")
   res.send(JSON.stringify(item))
 })
 
