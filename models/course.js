@@ -23,25 +23,25 @@ const CourseSchema = new mongoose.Schema({
     },
     professor: {
         type: Number,
-        required: true,
+        required: true
     },
     location: {
         type: String,
         minLength: 3,
         maxLength: 20,
-        required: true, 
+        required: true
     },
     section: {
         type: Number,
-        required: true,
+        required: true
     },
     time: {
         type: Number,
-        required: true,
+        required: true
     },
     capacity: {
         type: Number,
-        required: true,
+        required: true
     }
 })
 

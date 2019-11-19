@@ -1,56 +1,56 @@
 [
     {
         "_id": 42,
-        "CourseName": "Web Apps",
-        "Professor_id": 4,
-        "Location": "Colden Hall",
-        "Section": 2,
-        "Time": 11,
-        "Capacity": 30
+        "courseName": "Web Apps",
+        "professor": 4,
+        "location": "Colden Hall",
+        "section": 2,
+        "time": 11,
+        "capacity": 30
     },
     {
         "_id": 43,
-        "CourseName": "Big Data",
-        "Professor_id": 4,
-        "Location": "Colden Hall",
-        "Section": 1,
-        "Time": 1230,
-        "Capacity": 30
+        "courseName": "Big Data",
+        "professor": 4,
+        "location": "Colden Hall",
+        "section": 1,
+        "time": 1230,
+        "capacity": 30
     },
     {
         "_id": 44,
-        "CourseName": "Applied Cryptography",
-        "Professor_id": 5,
-        "Location": "Colden Hall",
-        "Section": 1,
-        "Time": 2,
-        "Capacity": 20
+        "courseName": "Applied Cryptography",
+        "professor": 5,
+        "location": "Colden Hall",
+        "section": 1,
+        "time": 2,
+        "capacity": 20
     },
     {
         "_id": 45,
-        "CourseName": "Web Mining",
-        "Professor_id": 1,
-        "Location": "Colden Hall",
-        "Section": 1,
-        "Time": 11,
-        "Capacity": 40
+        "courseName": "Web Mining",
+        "professor": 1,
+        "location": "Colden Hall",
+        "section": 1,
+        "time": 11,
+        "capacity": 40
     },
     {
         "_id": 46,
-        "CourseName": "Internet of Things",
-        "Professor_id": 2,
-        "Location": "Colden Hall",
-        "Section": 1,
-        "Time": 10,
-        "Capacity": 30
+        "courseName": "Internet of Things",
+        "professor": 2,
+        "location": "Colden Hall",
+        "section": 1,
+        "time": 10,
+        "capacity": 30
     },
     {
         "_id": 47,
-        "CourseName": "Discrete Math",
-        "Professor_id": 3,
-        "Location": "Valk",
-        "Section": 3,
-        "Time": 9,
-        "Capacity": 30
+        "courseName": "Discrete Math",
+        "professor": 3,
+        "location": "Valk",
+        "section": 3,
+        "time": 9,
+        "capacity": 30
     }
 ]
