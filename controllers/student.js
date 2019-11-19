@@ -44,7 +44,7 @@ api.get('/index', (req, res) => {
 })
 
 // GET details
-api.get('/details', (req, res) => {
+api.get('/details/:id', (req, res) => {
   LOG.info(`Handling GET /details/:id ${req}`)
   const id = parseInt(req.params.id)
   Model.find({ _id: id }, (err, results) => {
@@ -56,14 +56,14 @@ api.get('/details', (req, res) => {
 })
 
 // GET delete
-api.get('/delete', (req, res) => {
+api.get('/delete/:id', (req, res) => {
   LOG.info(`Handling DELETE request ${req}`)
   const id = parseInt(req.params.id)
   LOG.info(`Handling REMOVING ID=${id}`)
   Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
     if (err) { return res.end(notfoundstring) }
     console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
-    return res.redirect('/students/index')
+    return res.redirect('/student/index')
   })
 })
 
@@ -113,7 +113,7 @@ api.post('/save', (req, res) => {
   item.save((err) => {
     if (err) { return res.end('ERROR: item could not be saved') }
     LOG.info(`SAVING NEW item ${JSON.stringify(item)}`)
-    return res.redirect('/students/index')
+    return res.redirect('/student/index')
   })
 })
 
@@ -139,7 +139,7 @@ api.post('/save/:id', (req, res) => {
       LOG.info(`ORIGINAL VALUES ${JSON.stringify(item)}`)
       LOG.info(`UPDATED VALUES: ${JSON.stringify(req.body)}`)
       LOG.info(`SAVING UPDATED item ${JSON.stringify(item)}`)
-      return res.redirect('/students/index')
+      return res.redirect('/student/index')
     })
 })
 
@@ -151,7 +151,7 @@ api.post('/delete/:id', (req, res) => {
   Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
     if (err) { return res.end(notfoundstring) }
     console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
-    return res.redirect('/students/index')
+    return res.redirect('/student/index')
   })
 })
 
