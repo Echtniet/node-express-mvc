@@ -7,68 +7,76 @@
 */
 const express = require('express')
 const api = express.Router()
-//const Model = require('../models/pets.js')
+const Model = require('../models/pets.js')
+const LOG = require('../utils/logger.js')
 const find = require('lodash.find')
-const notfoundstring = 'Could not find pet with id='
+
 
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
 api.get('/findall', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  const data = req.app.locals.pets.query
-  res.send(JSON.stringify(data))
+  LOG.info(`Handling /findall ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) {
+      return res.end('Error finding all')
+    }
+    res.json(data)
+  })
 })
 
 // GET one JSON by ID
 api.get('/findone/:id', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
+  LOG.info(`Handling /findone ${req}`)
   const id = parseInt(req.params.id)
-  const data = req.app.locals.pets.query
-  const item = find(data, { _id: id })
-  if (!item) { return res.end(notfoundstring + id) }
-  res.send(JSON.stringify(item))
+  Model.find({_id: id}, (err, results) => {
+    if (err) { return res.end(`Pet with ID = ${id} not found.`)}
+    res.json(results[0])
+  })
 })
 
 // GET index
 api.get('/index', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Index request")
-  res.send(JSON.stringify(item))
+  LOG.info(`Handling GET / ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('Error') }
+    res.locals.pets = data
+    res.render('pets/index.ejs')
+  })
 })
 
 // GET details
 api.get('/details', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   return res.end("Detail request")
-  res.send(JSON.stringify(item))
+  // res.send(JSON.stringify(item))
 })
 
 // GET delete
 api.get('/delete', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   return res.end("Delete request")
-  res.send(JSON.stringify(item))
+  // res.send(JSON.stringify(item))
 })
 
 // GET edit
   api.get('/edit', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   return res.end("Edit request")
-  res.send(JSON.stringify(item))
+  // res.send(JSON.stringify(item))
 })
 
 // GET create
 api.get('/create', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   return res.end("Create request")
-  res.send(JSON.stringify(item))
+  // res.send(JSON.stringify(item))
 })
 
 // CRUD METHODS
-function handleCreate(){}
-function handleUpdate(){}
-function handleDelete(){}
+// function handleCreate(){}
+// function handleUpdate(){}
+// function handleDelete(){}
 
 
 // RESPOND WITH VIEWS  --------------------------------------------
