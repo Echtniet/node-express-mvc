@@ -1,0 +1,23 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Pet details</h2>
+      <br>
+      <br> ID: <%=  pet._id %>
+      <br> Name: <%=pet.name%>
+      <br> Owner's ID: <%=pet.ownerId%>
+      <br> Birth Date: <%=pet.birthDate%>
+      <br> Breed: <%=pet.breed%>
+      <br> Friendly: <%=pet.friendly %>
+      <hr>
+
+      <form method="get" action="/pets/index">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+
+    </div>
+  </div>
+</div>
