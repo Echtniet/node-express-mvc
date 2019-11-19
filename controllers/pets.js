@@ -10,6 +10,7 @@ const api = express.Router()
 const Model = require('../models/pets.js')
 const LOG = require('../utils/logger.js')
 const find = require('lodash.find')
+const notfoundstring = "Could not find pet with ID="
 
 
 // RESPOND WITH JSON DATA  --------------------------------------------
@@ -68,9 +69,25 @@ api.get('/delete', (req, res) => {
 
 // GET create
 api.get('/create', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  return res.end("Create request")
-  // res.send(JSON.stringify(item))
+  LOG.info(`Handling GET /create ${req}`)
+  Model.find({}, (err, data) => {
+    if (err) { return res.end('error on create') }
+    res.locals.pets = data
+    res.locals.pet = new Model()
+    res.render('pets/create')
+  })
+})
+
+// GET edit
+api.get('/edit/:id', (req, res) => {
+  LOG.info(`Handling GET /edit/:id ${req}`)
+  const id = parseInt(req.params.id)
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
+    res.locals.pet = results[0]
+    return res.render('pets/edit.ejs')
+  })
 })
 
 // CRUD METHODS
