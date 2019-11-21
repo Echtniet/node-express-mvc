@@ -51,7 +51,7 @@ api.get('/details/:id', (req, res) => {
   Model.find({ _id: id }, (err, results) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
-    res.locals.teacher = results[0]
+    res.locals.course = results[0]
     return res.render('course/details.ejs')
   })
 })
@@ -75,7 +75,7 @@ api.get('/edit/:id', (req, res) => {
   Model.find({ _id: id }, (err, results) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
-    res.locals.courses = results[0]
+    res.locals.course = results[0]
     return res.render('course/edit.ejs')
   })
 })
@@ -85,8 +85,8 @@ api.get('/create', (req, res) => {
   LOG.info(`Handling GET /create ${req}`)
   Model.find({}, (err, data) => {
     if (err) { return res.end('error on create') }
-    res.locals.course = data
-    res.locals.courses = new Model()
+    res.locals.courses = data
+    res.locals.course = new Model()
     res.render('course/create')
   })
 })
