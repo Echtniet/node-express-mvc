@@ -4,33 +4,33 @@
   <div class=row>
     <div class="col col-md-12">
       <a href="create" class="btn btn-primary new">
-        Create a new Teacher
+        Create a new Section
       </a>
 
       <h2>Recent entries</h2>
       <p>There are
-        <%= teachers.length %> teachers.
+        <%= sections.length %> sections.
         <br>
       </p>
-      <% for (let i = teachers.length-1; i >= 0; i--) {   
-        teacher = teachers[i];   %>
+      <% for (let i = sections.length-1; i >= 0; i--) {   
+        section = sections[i];   %>
 
       <div class="panel panel-default">
         <div class="panel-heading"></div>
         <div class="text-muted pull-right"></div>
         <div class="panel-body">
 
-          <br> ID: <%=  teacher._id %>
-          <br> Email: <%=teacher.email%>
-          <br> Given: <%=teacher.given%>
-          <br> Family: <%=teacher.family%>
-          <br> Salary: <%=teacher.salary%>
-          <br> GitHub: <%=teacher.github%>
+          <br> ID: <%=  section._id %>
+          <br> Email: <%=section.courseID%>
+          <br> Given: <%=section.given%>
+          <br> Family: <%=section.family%>
+          <br> Salary: <%=section.salary%>
+          <br> GitHub: <%=section.github%>
 
           <hr>
-          <a href="/teachers/delete/<%= teacher._id  %>" class="btn btn-danger"> Delete </a>
-          <a href="/teachers/details/<%= teacher._id %>" class="btn btn-info"> Details </a>
-          <a href="/teachers/edit/<%= teacher._id %>" class="btn btn-primary"> Edit </a>
+          <a href="/section/delete/<%= section._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/section/details/<%= section._id %>" class="btn btn-info"> Details </a>
+          <a href="/section/edit/<%= section._id %>" class="btn btn-primary"> Edit </a>
           <hr>
           <hr>
         </div>

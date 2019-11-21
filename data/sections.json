@@ -1,38 +1,57 @@
 [
     {
         "_id": 1,
+        "sectioNumber":1,
+        "days": "TR",
+        "startTime": 1100,
+        "roomNumber": 1200,
         "courseId": 1,
-        "professorId": 4,
-        "studentId": 1
+        "intructorID": 4,
     },
     {
-        "_id": 1,
+        "_id": 2,
+        "sectioNumber":2,
+        "days": "TR",
+        "startTime": 930,
+        "roomNumber": 1200,
         "courseId": 1,
-        "professorId": 4,
-        "studentId": 2
+        "intructorID": 4,
     },
     {
-        "_id": 1,
+        "_id": 3,
+        "sectioNumber":3,
+        "days": "TR",
+        "startTime": 800,
+        "roomNumber": 1200,
         "courseId": 1,
-        "professorId": 4,
-        "studentId": 3
+        "intructorID": 4,
     },
     {
-        "_id": 1,
-        "courseId": 1,
-        "professorId": 4,
-        "studentId": 4
+        "_id": 4,
+        "sectioNumber":1,
+        "days": "MWF",
+        "startTime": 1000,
+        "roomNumber": 1400,
+        "courseId": 2,
+        "intructorID": 5,
     },
     {
-        "_id": 1,
-        "courseId": 1,
-        "professorId": 4,
-        "studentId": 5
+        "_id": 5,
+        "sectioNumber":2,
+        "days": "MWF",
+        "startTime": 900,
+        "roomNumber": 1400,
+        "courseId": 2,
+        "intructorID": 5,
     },
     {
-        "_id": 1,
-        "courseId": 1,
-        "professorId": 4,
-        "studentId": 6
+        "_id": 6,
+        "sectioNumber":3,
+        "days": "MWF",
+        "startTime": 800,
+        "roomNumber": 1400,
+        "courseId": 2,
+        "intructorID": 5,
     }
+    
 ]
