@@ -21,11 +21,12 @@
         <div class="panel-body">
 
           <br> ID: <%=  section._id %>
-          <br> Email: <%=section.courseID%>
-          <br> Given: <%=section.given%>
-          <br> Family: <%=section.family%>
-          <br> Salary: <%=section.salary%>
-          <br> GitHub: <%=section.github%>
+          <br> Section Number <%=section.sectionNumber%>
+          <br> Course ID: <%=section.courseID%>
+          <br> Instructor ID: <%=section.instructorID%>
+          <br> Room Number: <%=section.roomNumber%>
+          <br> Days: <%=section.days%>
+          <br> Start Time: <%=section.startTime%>
 
           <hr>
           <a href="/section/delete/<%= section._id  %>" class="btn btn-danger"> Delete </a>
