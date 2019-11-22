@@ -87,7 +87,7 @@ api.get('/create', (req, res) => {
     if (err) { return res.end('error on create') }
     res.locals.courses = data
     res.locals.course = new Model()
-    res.render('/course/create')
+    res.render('course/create.ejs')
   })
 })
 
