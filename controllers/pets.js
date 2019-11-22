@@ -77,7 +77,7 @@ api.get('/edit/:id', (req, res) => {
   Model.find({ _id: id }, (err, results) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
-    res.locals.teacher = results[0]
+    res.locals.pet = results[0]
     return res.render('pets/edit.ejs')
   })
 })
@@ -90,18 +90,6 @@ api.get('/create', (req, res) => {
     res.locals.pets = data
     res.locals.pet = new Model()
     res.render('pets/create')
-  })
-})
-
-// GET edit
-api.get('/edit/:id', (req, res) => {
-  LOG.info(`Handling GET /edit/:id ${req}`)
-  const id = parseInt(req.params.id)
-  Model.find({ _id: id }, (err, results) => {
-    if (err) { return res.end(notfoundstring) }
-    LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
-    res.locals.pet = results[0]
-    return res.render('pets/edit.ejs')
   })
 })
 
