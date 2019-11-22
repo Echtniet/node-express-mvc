@@ -106,12 +106,11 @@ api.post('/save', (req, res) => {
   const item = new Model()
   LOG.info(`NEW ID ${req.body._id}`)
   item._id = parseInt(req.body._id)
-  item.sectionNumber = req.body.sectionNumber
-  item.courseID = req.body.courseID
-  item.instructorID = req.body.instructorID
-  item.roomNumber = req.body.roomNumber
-  item.days = req.body.days
-  item.startTime = req.body.startTime
+  item.email = req.body.email
+  item.given = req.body.given
+  item.family = req.body.family
+  item.salary = req.body.salary
+  item.github = req.body.github
   item.save((err) => {
     if (err) { return res.end('ERROR: item could not be saved') }
     LOG.info(`SAVING NEW item ${JSON.stringify(item)}`)
@@ -127,12 +126,11 @@ api.post('/save/:id', (req, res) => {
   Model.updateOne({ _id: id },
     { // use mongoose field update operator $set
       $set: {
-        sectionNumber: req.body.sectionNumber,
-        courseID: req.body.courseID,
-        instructorID: req.body.instructorID,
-        roomNumber: req.body.roomNumber,
-        days: req.body.days
-        startTime: req.body.startTime
+        email: req.body.email,
+        given: req.body.given,
+        family: req.body.family,
+        salary: req.body.salary,
+        githb: req.body.github
       }
     },
     (err, item) => {
