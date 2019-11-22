@@ -1,0 +1,87 @@
+<!-- main - a row holds columns -->
+<div class=row>
+  <div class="col col-xs-12">
+
+    <div class="form-group">
+      <label for="secNum">Section Number</label>
+      <input type="number" class="form-control" id="secNum" name="secNum" value="<%= section.sectionNumber %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="days">Days</label>
+      <input type="text" class="form-control" id="days" name="days" value="<%= section.days %>">
+    </div>
+
+    <div class="form-group">
+      <label for="start">Start Time</label>
+      <input type="number" class="form-control" id="start" name="start" value="<%= section.startTime %>">
+    </div>
+
+    <div class="form-group">
+      <label for="roomNumber">Room Number </label>
+      <input type="number" class="form-control" id="roomNumber" name="roomNumber" value="<%= section.roomNumber %>">
+    </div>
+
+    <div class="form-group">
+      <label for="instID">Instructor ID </label>
+      <input type="number" class="form-control" id="instID" name="instID" value="<%= section.instructorID %>">
+    </div>
+
+    <div class="form-group">
+      <label for="courseID">Course ID </label>
+      <input type="number" class="form-control" id="courseID" name="courseID" value="<%= section.courseID %>">
+    </div>
+
+
+  </div>
+</div>
+
+<!-- PUT CLIENT SIDE CODE HERE -->
+<script>
+
+  // function toCurrency(amount) 
+
+  // https://gist.github.com/kylefox/780065
+  function toCurrency(amount) {
+    return "$" + amount.toFixed(2);
+  };
+
+  // function toCurrencyInt(amount) 
+  function toCurrencyInt(amount) {
+    return "$" + amount.toFixed(0);
+  };
+
+  // Add  .toCurrency() method to all Numbers
+  Number.prototype.toCurrency = function () {
+    return toCurrency(this);
+  };
+
+  // Add  .toCurrencyInt() method to all Numbers
+  Number.prototype.toCurrencyInt = function () {
+    return toCurrencyInt(this);
+  };
+
+  function onFormChange() {
+    const newAge = parseFloat($("input[name=age]").val());
+    let price = 75
+    if (newAge == 1) {
+      price = 100
+    }
+    $("#puppyCost").html(price.toCurrencyInt());
+  }
+
+  // window.onload = a function that will call all update functions to display calculated values
+  window.onload = function () {
+    onFormChange();
+  }
+
+  // prevent submission when hitting enter key - optional, but user-friendly 
+  document.forms[0].onkeypress = function (e) {
+    var key = e.charCode || e.keyCode || 0;
+    if (key == 13) {
+      e.preventDefault();
+    }
+  }
+
+// END CLIENT SIDE CODE  (close the script tag)
+</script>
