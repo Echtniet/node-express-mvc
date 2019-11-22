@@ -1,6 +1,6 @@
 [
     {
-        "_id": 42,
+        "_id": 1,
         "courseName": "Web Apps",
         "professor": 4,
         "location": "Colden Hall",
@@ -9,7 +9,7 @@
         "capacity": 30
     },
     {
-        "_id": 43,
+        "_id": 2,
         "courseName": "Big Data",
         "professor": 4,
         "location": "Colden Hall",
@@ -18,7 +18,7 @@
         "capacity": 30
     },
     {
-        "_id": 44,
+        "_id": 3,
         "courseName": "Applied Cryptography",
         "professor": 5,
         "location": "Colden Hall",
@@ -27,7 +27,7 @@
         "capacity": 20
     },
     {
-        "_id": 45,
+        "_id": 4,
         "courseName": "Web Mining",
         "professor": 1,
         "location": "Colden Hall",
@@ -36,7 +36,7 @@
         "capacity": 40
     },
     {
-        "_id": 46,
+        "_id": 5,
         "courseName": "Internet of Things",
         "professor": 2,
         "location": "Colden Hall",
@@ -45,7 +45,7 @@
         "capacity": 30
     },
     {
-        "_id": 47,
+        "_id": 6,
         "courseName": "Discrete Math",
         "professor": 3,
         "location": "Valk",

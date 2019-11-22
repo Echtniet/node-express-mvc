@@ -12,6 +12,7 @@ const LOG = require('../utils/logger.js')
 const find = require('lodash.find')
 const notfoundstring = 'Could not find course with id='
 
+
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
@@ -44,19 +45,19 @@ api.get('/index', (req, res) => {
 })
 
 // GET details
-api.get('/details', (req, res) => {
+api.get('/details/:id', (req, res) => {
   LOG.info(`Handling GET /details/:id ${req}`)
   const id = parseInt(req.params.id)
   Model.find({ _id: id }, (err, results) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
-    res.locals.teacher = results[0]
+    res.locals.course = results[0]
     return res.render('course/details.ejs')
   })
 })
 
 // GET delete
-api.get('/delete', (req, res) => {
+api.get('/delete/:id', (req, res) => {
   LOG.info(`Handling DELETE request ${req}`)
   const id = parseInt(req.params.id)
   LOG.info(`Handling REMOVING ID=${id}`)
@@ -68,13 +69,13 @@ api.get('/delete', (req, res) => {
 })
 
 // GET edit
-api.get('/edit', (req, res) => {
+api.get('/edit/:id', (req, res) => {
   LOG.info(`Handling GET /edit/:id ${req}`)
   const id = parseInt(req.params.id)
   Model.find({ _id: id }, (err, results) => {
     if (err) { return res.end(notfoundstring) }
     LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
-    res.locals.teacher = results[0]
+    res.locals.course = results[0]
     return res.render('course/edit.ejs')
   })
 })
@@ -84,8 +85,8 @@ api.get('/create', (req, res) => {
   LOG.info(`Handling GET /create ${req}`)
   Model.find({}, (err, data) => {
     if (err) { return res.end('error on create') }
-    res.locals.teachers = data
-    res.locals.teacher = new Model()
+    res.locals.courses = data
+    res.locals.course = new Model()
     res.render('course/create')
   })
 })
@@ -115,6 +116,7 @@ api.post('/save', (req, res) => {
     return res.redirect('/course/index')
   })
 })
+
 // POST save with id
 api.post('/save/:id', (req, res) => {
   LOG.info(`Handling SAVE request ${req}`)
