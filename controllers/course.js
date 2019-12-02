@@ -85,17 +85,17 @@ api.get('/create', (req, res) => {
   LOG.info(`Handling GET /create ${req}`)
   Model.find({}, (err, data) => {
     if (err) { return res.end('error on create') }
-    res.locals.courses = data
-    res.locals.course = new Model()
-    res.render('course/create.ejs')
+    res.locals.course = data
+    res.locals.courses = new Model()
+    res.render('course/create')
   })
 })
 
-api.post('/postcreate', (req, res) =>{
+/*api.post('/postcreate', (req, res) =>{
   res.setHeader('Content-Type', 'application/json')
   return res.end("Post create request")
   res.send(JSON.stringify(item))
-})
+})*/
 
 // CRUD METHODS
 api.post('/save', (req, res) => {
